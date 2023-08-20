@@ -1,0 +1,15 @@
+.footer {
+  @include font-style;
+  color: $color-quinary;
+  text-align: center;
+  font-size: 0.875rem;
+  padding: 1.15rem;
+  margin-top: 5.94rem;
+  @include breakpoint($breakpoint-desktop) {
+    margin-top: 9.94rem;
+  }
+
+  span {
+    font-weight: 700;
+  }
+}

@@ -1,0 +1,479 @@
+@charset "UTF-8";
+/***
+    The new CSS reset - version 1.8.5 (last updated 14.6.2023)
+    GitHub page: https://github.com/elad2412/the-new-css-reset
+***/
+/*
+    Remove all the styles of the "User-Agent-Stylesheet", except for the 'display' property
+    - The "symbol *" part is to solve Firefox SVG sprite bug
+    - The "html" attribute is exclud, because otherwise a bug in Chrome breaks the CSS hyphens property (https://github.com/elad2412/the-new-css-reset/issues/36)
+ */
+*:where(:not(html, iframe, canvas, img, svg, video, audio):not(svg *, symbol *)) {
+  all: unset;
+  display: revert;
+}
+
+/* Preferred box-sizing value */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+option {
+  font-size: 500px;
+}
+
+/* Reapply the pointer cursor for anchor tags */
+a,
+button {
+  cursor: revert;
+}
+
+/* Remove list styles (bullets/numbers) */
+ol,
+ul,
+menu {
+  list-style: none;
+}
+
+/* For images to not be able to exceed their container */
+img {
+  max-inline-size: 100%;
+  max-block-size: 100%;
+}
+
+/* removes spacing between cells in tables */
+table {
+  border-collapse: collapse;
+}
+
+/* Safari - solving issue when using user-select:none on the <body> text input doesn't working */
+input,
+textarea {
+  -webkit-user-select: auto;
+}
+
+/* revert the 'white-space' property for textarea elements on Safari */
+textarea {
+  white-space: revert;
+}
+
+/* minimum style to allow to style meter element */
+meter {
+  -webkit-appearance: revert;
+  appearance: revert;
+}
+
+/* preformatted text - use only for this feature */
+:where(pre) {
+  all: revert;
+}
+
+/* reset default text opacity of input placeholder */
+::placeholder {
+  color: unset;
+}
+
+/* remove default dot (•) sign */
+::marker {
+  content: initial;
+}
+
+/* fix the feature of 'hidden' attribute.
+   display:revert; revert to element instead of attribute */
+:where([hidden]) {
+  display: none;
+}
+
+/* revert for bug in Chromium browsers
+   - fix for the content editable attribute will work properly.
+   - webkit-user-select: auto; added for Safari in case of using user-select:none on wrapper element */
+:where([contenteditable]:not([contenteditable=false])) {
+  -moz-user-modify: read-write;
+  -webkit-user-modify: read-write;
+  overflow-wrap: break-word;
+  -webkit-line-break: after-white-space;
+  -webkit-user-select: auto;
+}
+
+/* apply back the draggable feature - exist only in Chromium and Safari */
+:where([draggable=true]) {
+  -webkit-user-drag: element;
+}
+
+/* Revert Modal native behavior */
+:where(dialog:modal) {
+  all: revert;
+}
+
+body {
+  background-color: #fff;
+  font-family: "Montserrat", sans-serif;
+}
+
+.container {
+  padding: 2rem 0.75rem;
+}
+@media (min-width: 89.9375rem) {
+  .container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 4rem 15rem;
+  }
+}
+
+@media (min-width: 63.9375rem) {
+  .wrapper {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+  }
+}
+
+.header__title {
+  font-family: "Montserrat", sans-serif;
+  line-height: normal;
+  font-style: normal;
+  color: #4e5150;
+  font-weight: 600;
+  color: #4e5150;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1.31rem;
+}
+@media (min-width: 63.9375rem) {
+  .header__title {
+    font-size: 2.25rem;
+    margin-bottom: 3.18rem;
+  }
+}
+
+.form__section {
+  text-align: left;
+}
+.form__section-title {
+  font-family: "Montserrat", sans-serif;
+  line-height: normal;
+  font-style: normal;
+  color: #4e5150;
+  font-weight: 600;
+  color: #333;
+  font-size: 0.875rem;
+  margin-bottom: 0.75rem;
+}
+@media (min-width: 63.9375rem) {
+  .form__section-title {
+    font-size: 1.125rem;
+    margin-bottom: 0.93rem;
+  }
+}
+.form__input-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.03rem;
+  position: relative;
+}
+@media (min-width: 63.9375rem) {
+  .form__input-group {
+    margin-bottom: 1.25rem;
+  }
+}
+.form__input-group:nth-child(3) {
+  margin-bottom: 2.81rem;
+}
+@media (min-width: 63.9375rem) {
+  .form__input-group:nth-child(3) {
+    margin-bottom: 3.63rem;
+  }
+}
+.form__label {
+  font-family: "Montserrat", sans-serif;
+  line-height: normal;
+  font-style: normal;
+  color: #4e5150;
+  font-weight: 600;
+  color: #4f4f4f;
+  font-size: 0.625rem;
+  margin-bottom: 0.33rem;
+}
+@media (min-width: 63.9375rem) {
+  .form__label {
+    font-size: 0.75rem;
+    margin-bottom: 0.44rem;
+  }
+}
+.form__check-text {
+  font-family: "Montserrat", sans-serif;
+  line-height: normal;
+  font-style: normal;
+  color: #4e5150;
+  font-weight: 600;
+  color: #4f4f4f;
+  font-size: 0.625rem;
+  margin-bottom: 0;
+}
+.form__input {
+  width: 100%;
+  border-radius: 0.75rem;
+  border: 1px solid #828282;
+  padding: 0.8rem 2.44rem;
+  padding-right: 0;
+  font-family: "Montserrat", sans-serif;
+  line-height: normal;
+  font-style: normal;
+  color: #4e5150;
+  font-weight: 600;
+  font-size: 0.75rem;
+  color: #828282;
+}
+@media (min-width: 63.9375rem) {
+  .form__input {
+    padding: 1.12rem 2.44rem;
+    font-size: 1rem;
+  }
+}
+.form__input option {
+  font-size: 0.75rem;
+  color: #828282;
+}
+@media (min-width: 63.9375rem) {
+  .form__input option {
+    font-size: 1rem;
+  }
+}
+.form__input::placeholder {
+  font-family: "Montserrat", sans-serif;
+  line-height: normal;
+  font-style: normal;
+  color: #4e5150;
+  font-weight: 600;
+  color: #828282;
+  font-size: 0.75rem;
+}
+@media (min-width: 63.9375rem) {
+  .form__input::placeholder {
+    font-size: 1rem;
+  }
+}
+.form__input-container {
+  display: flex;
+  justify-content: space-between;
+}
+.form #postal,
+.form #country {
+  width: 50%;
+}
+.form #postal {
+  margin-left: 0.73rem;
+}
+@media (min-width: 63.9375rem) {
+  .form #postal {
+    margin-left: 0.97rem;
+  }
+}
+.form #country {
+  margin-right: 0.73rem;
+}
+@media (min-width: 63.9375rem) {
+  .form #country {
+    margin-right: 0.97rem;
+  }
+}
+.form__input-checkbox {
+  display: flex;
+  align-items: center;
+}
+.form__input-checkbox p {
+  margin-left: 0.29rem;
+}
+.form__checkbox {
+  all: revert;
+}
+.form__btn-wrapper {
+  display: flex;
+  justify-content: end;
+}
+.form__button {
+  font-family: "Montserrat", sans-serif;
+  line-height: normal;
+  font-style: normal;
+  color: #4e5150;
+  font-weight: 600;
+  border-radius: 0.75rem;
+  background: #f2994a;
+  color: #fff;
+  font-size: 1rem;
+  padding: 1.06rem 2.81rem;
+  cursor: pointer;
+  transition: opacity 0.3s;
+  margin-top: 1.25rem;
+}
+.form__button:hover {
+  opacity: 0.5;
+}
+.form__icon {
+  display: block;
+  position: absolute;
+  transform: translate(80%, 154%);
+  color: #828282;
+}
+.form__icon.chevron {
+  right: 10%;
+  font-size: 0.7rem;
+  top: 0.6rem;
+}
+@media (min-width: 63.9375rem) {
+  .form__icon.chevron {
+    font-size: 0.8rem;
+  }
+}
+@media (min-width: 63.9375rem) {
+  .form__icon {
+    transform: translate(80%, 214%);
+  }
+}
+
+.cart {
+  padding: 1.91rem 1.3rem;
+}
+.cart__product {
+  display: flex;
+}
+.cart__product:not(:nth-child(2)) {
+  margin-bottom: 1.81rem;
+}
+.cart__product:not(:nth-child(1)) {
+  margin-bottom: 5.45rem;
+}
+.cart__product-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.cart__product-name {
+  font-family: "Montserrat", sans-serif;
+  line-height: normal;
+  font-style: normal;
+  color: #4e5150;
+  font-weight: 600;
+  font-size: 0.75rem;
+  margin-bottom: 0.34rem;
+}
+@media (min-width: 63.9375rem) {
+  .cart__product-name {
+    font-size: 1rem;
+  }
+}
+.cart__product-price {
+  font-family: "Montserrat", sans-serif;
+  line-height: normal;
+  font-style: normal;
+  color: #4e5150;
+  font-weight: 600;
+  color: #f2994a;
+  font-size: 0.875rem;
+}
+@media (min-width: 63.9375rem) {
+  .cart__product-price {
+    font-size: 1rem;
+  }
+}
+.cart__product-price span {
+  color: #4e5150;
+  font-size: 0.625rem;
+  text-decoration-line: line-through;
+  margin-left: 0.5rem;
+}
+@media (min-width: 63.9375rem) {
+  .cart__product-price span {
+    font-size: 0.75rem;
+  }
+}
+.cart__product-quantity {
+  padding: 0.98rem 0.58rem;
+  border-radius: 0.8rem;
+  border: 1px solid #828282;
+  display: flex;
+  justify-content: space-between;
+  width: 7.67481rem;
+}
+@media (min-width: 63.9375rem) {
+  .cart__product-quantity {
+    width: 9rem;
+  }
+}
+.cart__quantity {
+  font-family: "Montserrat", sans-serif;
+  line-height: normal;
+  font-style: normal;
+  color: #4e5150;
+  font-weight: 600;
+  color: #333;
+}
+.cart__quantity-btn {
+  font-family: "Montserrat", sans-serif;
+  line-height: normal;
+  font-style: normal;
+  color: #4e5150;
+  font-weight: 600;
+  font-size: 0.6rem;
+  padding: 0.2rem;
+  color: #828282;
+  background-color: rgba(130, 130, 130, 0.272);
+  border-radius: 0.2rem;
+  cursor: pointer;
+}
+.cart__product-image {
+  width: 100%;
+  max-width: 7.4rem;
+  border-radius: 1rem;
+  margin-right: 1rem;
+}
+.cart__divider {
+  width: 100%;
+  height: 0.0625rem;
+  background-color: #bdbdbd;
+  margin-bottom: 0.61rem;
+}
+.cart__cost {
+  margin-bottom: 0.61rem;
+  display: flex;
+  justify-content: space-between;
+  font-family: "Montserrat", sans-serif;
+  line-height: normal;
+  font-style: normal;
+  color: #4e5150;
+  font-weight: 600;
+  color: #333;
+  font-size: 0.875rem;
+}
+@media (min-width: 63.9375rem) {
+  .cart__cost {
+    font-size: 1.125rem;
+    margin-bottom: 0.67rem;
+  }
+}
+
+.footer {
+  font-family: "Montserrat", sans-serif;
+  line-height: normal;
+  font-style: normal;
+  color: #4e5150;
+  font-weight: 600;
+  color: #bdbdbd;
+  text-align: center;
+  font-size: 0.875rem;
+  padding: 1.15rem;
+  margin-top: 5.94rem;
+}
+@media (min-width: 63.9375rem) {
+  .footer {
+    margin-top: 9.94rem;
+  }
+}
+.footer span {
+  font-weight: 700;
+}
+
+/*# sourceMappingURL=main.css.map */

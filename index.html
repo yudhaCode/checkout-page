@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1,
+  maximum-scale=5"
+    />
+
+    <link rel="icon" href="devchallenges.png" />
+
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="https://devchallenges.io/"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"
+    />
+    <!-- Montserrat font link with multiple weights -->
+
+    <link rel="stylesheet" href="css/main.css" />
+
+    <title>Checkout Page</title>
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <h1 class="header__title">Checkout</h1>
+      </header>
+
+      <main class="wrapper">
+        <section class="cart">
+          <div class="cart__section">
+            <div class="cart__product">
+              <img
+                src="photo1.png"
+                alt="Product Image"
+                class="cart__product-image"
+              />
+              <div class="cart__product-info">
+                <div>
+                  <h3 class="cart__product-name">Vintage Backbag</h3>
+                  <p class="cart__product-price">$54.99 <span>$94.99</span></p>
+                </div>
+                <div class="cart__product-quantity">
+                  <button class="cart__quantity-btn minus">
+                    <i class="fas fa-minus"></i>
+                  </button>
+                  <span class="cart__quantity">1</span>
+                  <button class="cart__quantity-btn plus">
+                    <i class="fas fa-plus"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="cart__product">
+              <img
+                src="photo2.png"
+                alt="Product Image"
+                class="cart__product-image"
+              />
+              <div class="cart__product-info">
+                <div>
+                  <h3 class="cart__product-name">Levi Shoes</h3>
+                  <p class="cart__product-price">$74.99 <span>$124.99</span></p>
+                </div>
+                <div class="cart__product-quantity">
+                  <button class="cart__quantity-btn minus">
+                    <i class="fas fa-minus"></i>
+                  </button>
+                  <span class="cart__quantity">1</span>
+                  <button class="cart__quantity-btn plus">
+                    <i class="fas fa-plus"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <hr class="cart__divider" />
+            <p class="cart__cost"><span>Shipping</span> $19</p>
+            <hr class="cart__divider" />
+            <p class="cart__cost"><span>Total</span> $148.98</p>
+          </div>
+        </section>
+
+        <section class="form">
+          <div class="form__section">
+            <!-- contact information -->
+            <h2 class="form__section-title">Contact Information</h2>
+            <div class="form__input-group">
+              <label for="email" class="form__label">E-mail</label>
+              <input
+                type="email"
+                id="email"
+                class="form__input form__input--email"
+                placeholder="Enter your email.."
+                aria-label="Email"
+              />
+              <span class="form__icon"><i class="fas fa-envelope"></i></span>
+            </div>
+            <div class="form__input-group">
+              <label for="phone" class="form__label">Phone</label>
+              <input
+                type="tel"
+                id="phone"
+                class="form__input form__input--phone"
+                placeholder="Enter your phone.."
+                aria-label="Phone"
+              />
+              <span class="form__icon form__icon--right"
+                ><i class="fas fa-phone"></i
+              ></span>
+            </div>
+            <!-- shipping address -->
+            <h2 class="form__section-title">Shipping address</h2>
+            <div class="form__input-group">
+              <label for="fullname" class="form__label">Fullname</label>
+              <input
+                type="text"
+                id="fullname"
+                class="form__input form__input--text"
+                placeholder="Enter your fullname.."
+                aria-label="Fullname"
+              />
+              <span class="form__icon"><i class="fas fa-user"></i></span>
+            </div>
+            <div class="form__input-group">
+              <label for="address" class="form__label">Address</label>
+              <input
+                type="text"
+                id="address"
+                class="form__input form__input--text"
+                placeholder="Enter your address.."
+                aria-label="Address"
+              />
+              <span class="form__icon"><i class="fas fa-home"></i></span>
+            </div>
+            <div class="form__input-group">
+              <label for="city" class="form__label">City</label>
+              <input
+                type="text"
+                id="city"
+                class="form__input form__input--text"
+                placeholder="Enter your city.."
+                aria-label="City"
+              />
+              <span class="form__icon"><i class="fas fa-city"></i></span>
+            </div>
+
+            <div class="form__input-container">
+              <div class="form__input-group" id="country">
+                <label for="country" class="form__label">Country</label>
+                <select
+                  class="form__input form__input--select"
+                  aria-label="Country"
+                >
+                  <option value="cy"><p>Your country..</p></option>
+                  <option value="us"><p>United States</p></option>
+                  <option value="ca">Canada</option>
+                  <option value="uk">United Kingdom</option>
+                  <!-- Add more options here -->
+                </select>
+                <span class="form__icon"><i class="fas fa-globe"></i></span>
+                <span class="form__icon chevron"
+                  ><i class="fas fa-chevron-down select-icon"></i>
+                </span>
+              </div>
+              <div class="form__input-group" id="postal">
+                <label for="postal" class="form__label">Postal Code</label>
+                <input
+                  type="text"
+                  class="form__input form__input--text"
+                  placeholder="Your postal code.."
+                  aria-label="Postal Code"
+                />
+                <span class="form__icon"><i class="fas fa-suitcase"></i> </span>
+              </div>
+            </div>
+
+            <div class="form__input-checkbox">
+              <input type="checkbox" id="save-info" class="form__checkbox" />
+              <p class="form__check-text" id="save-info">
+                Save this information for next time
+              </p>
+            </div>
+
+            <div class="form__btn-wrapper">
+              <button class="form__button">Continue</button>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <footer class="footer">
+      created by <span>Faisal Yudha Nugraha</span> - devChallenges.io
+    </footer>
+
+    <script src="main.js"></script>
+  </body>
+</html>

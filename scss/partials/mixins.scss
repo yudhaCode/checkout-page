@@ -1,0 +1,15 @@
+// text styles
+@mixin font-style {
+  font-family: $font-montserrat;
+  line-height: normal;
+  font-style: normal;
+  color: $color-primary;
+  font-weight: 600;
+}
+
+// breakpoints
+@mixin breakpoint($breakpoint) {
+  @media (min-width: $breakpoint) {
+    @content;
+  }
+}
